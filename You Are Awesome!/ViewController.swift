@@ -22,8 +22,7 @@ class ViewController: UIViewController {
     let numberOfSounds = 6
     var soundName = ""
     
-    //FIXME: -Please repair this error
-    //TODO: -Update viewDidLoad
+   
     //This code executes when the view controller loads
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,19 +50,18 @@ class ViewController: UIViewController {
         var newIndex = -1
         repeat {
             newIndex = Int(arc4random_uniform(UInt32(maxValue)))
-        } while index == newIndex
+        } while lastNumber == newIndex
         return newIndex
     }
     //MARK: -Actions
     @IBAction func soundSwtichPressed(_ sender: UISwitch) {
-        if !soundSwitch.isOn {
-            if soundNumber != -1 {
+        if !soundSwitch.isOn && soundNumber != -1 {
+            
             //stop playing
             awesomePlayer.stop()
-            }
-            
         }
     }
+    
     
     @IBAction func messageButtonPressed(_ sender: UIButton) {
 
